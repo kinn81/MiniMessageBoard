@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  a(href="/new") Add a message
+  if messages.length > 0
+    h2 Messages
+    ul
+      each message in messages
+        li
+          span  #{message.user}
+          span  (#{message.added})
+          br
+          strong #{message.text}
+  else
+    p No messages found.
